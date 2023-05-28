@@ -1,2 +1,2 @@
-# CAlender_and_Remainders
-Programming in C course Project
+# Calender-and-Reminders
+Problem Solving and Programming in C course Project
