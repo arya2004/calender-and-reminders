@@ -4,7 +4,7 @@ Please include a summary of the change and which issue is fixed. Please also inc
 
 Fixes # (issue)
 
-### Type of change
+### Type of changes
 
 Please delete options that are not relevant.
 
