@@ -1,73 +1,125 @@
-# Calendar and Reminder
 
-This C project allows you to manage reminders and display a calendar for any month of any year. The reminders are stored in a binary file and can be accessed later. The program marks dates on the calendar with a star (*) if there is a reminder set for that day.
+# Calendar Application
 
-## Features
+## Overview
 
-- Create and view reminders.
-- Display a calendar for any month and year.
-- Mark dates with reminders on the calendar.
-- Save reminders in a binary file for future use.
+This is a simple calendar application that allows users to:
+1. Print the calendar for a given month and year.
+2. Add reminders (notes) to specific dates.
+3. Display reminders for a specific month.
 
-## Getting Started
+## Directory Structure
 
-1. Clone the repository to your local machine.
-   ```shell
-   git clone https://github.com/arya2004/Calender-and-Reminders.git
-   ```
+```
+calendar_app/
+├── include/
+│   ├── calendar.h
+│   ├── notes.h
+├── src/
+│   ├── calendar.c
+│   ├── notes.c
+│   ├── main.c
+├── Makefile
+└── README.md
+```
 
-2. Compile the source code using a C compiler.
-   ```shell
-   gcc 1.c
-   ```
-3. Run the executable.
-   ```shell
-   ./a.exe
-   ```
+## Files
+
+### `include/calendar.h`
+
+Contains declarations for calendar-related functions:
+- `void calendar_printer(int year, int month);`
+- `int leap(int year);`
+- `int jan_first_day(int year);`
+- `int month_first_day(int year, int month);`
+
+### `include/notes.h`
+
+Contains declarations for notes-related functions and structure:
+- `struct Remainder`
+- `extern struct Remainder R;`
+- `char checkNote(int dd, int mm);`
+- `void AddNote();`
+- `void showNote(int mm);`
+
+### `src/calendar.c`
+
+Contains implementations for calendar-related functions:
+- `leap`
+- `jan_first_day`
+- `month_first_day`
+- `calendar_printer`
+
+### `src/notes.c`
+
+Contains implementations for notes-related functions:
+- `checkNote`
+- `AddNote`
+- `showNote`
+
+### `src/main.c`
+
+Contains the main program logic for user interaction and to call the relevant functions based on user input.
+
+### `Makefile`
+
+Defines the build process for the project.
+
+## How to Build and Run
+
+### Prerequisites
+
+- `gcc` compiler
+
+### Build
+
+To build the project, navigate to the `calendar_app` directory and run:
+
+```sh
+make
+```
+
+This will compile the source files and create an executable named `calendar_app`.
+
+### Clean
+
+To clean up the build files, run:
+
+```sh
+make clean
+```
+
+### Run
+
+To run the application, use:
+
+```sh
+./calendar_app
+```
 
 ## Usage
 
-The program provides a command-line interface (CLI) for interaction. Once you run the executable, follow the on-screen instructions to perform various actions.
+1. **Print the calendar**
 
-### Commands
+   Choose option `1` and enter the month and year for which you want to print the calendar.
 
-- `add`: Add a new reminder.
-- `show`: Show a reminder.
-- `calendar`: Display the calendar for a specific month and year.
-- `exit`: Exit the program.
+2. **Add a reminder**
 
-### Adding a Reminder
+   Choose option `2`, then enter the date (day and month) and the note (up to 50 characters).
 
-To add a reminder, use the `add` command and provide the date, month and description of the reminder when prompted.
+3. **Show reminders**
 
+   Choose option `3` and enter the month to display all reminders for that month.
 
-### Viewing a Reminder
+4. **Exit**
 
-To view a reminder, use the `view` command and provide  month of the reminder you want to view.
+   Choose option `0` to exit the application.
 
-### Displaying a Calendar
-
-To display the calendar for a specific month and year, use the `calendar` command and provide the month and year when prompted.
-
-### Exiting the Program
-
-To exit the program, use the `exit` command.
-
-## File Structure
-
-- `1.c`: The main source code file.
-- `note.dat`: The binary file where reminders are stored.
-
-## Contributing
-
-Contributions to the project are always welcome. If you find a bug or have any suggestions for improvement, please open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgements
+## Acknowledgments
 
-- The project was inspired by the need for a simple calendar and reminder system.
-
-Feel free to customize and enhance this readme file to better suit your project's requirements.
+- Inspiration and guidance from various online resources and tutorials.
